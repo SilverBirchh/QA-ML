@@ -3,9 +3,14 @@
 Python Script to read image files and convert them to text using [Google Tesseract](https://github.com/tesseract-ocr/tesseract) and [OpenCV](https://docs.opencv.org/trunk/index.html).
 
 Right now it is a CLI interface. 
-Example usage:
 
-`python ocr.py --image images/walmart.jpg`
+# Usage:
+
+`$ python ocr.py --image images/walmart.jpg`
+
+You can use the `--preprocess` to apply some limited preprcessing to the image. This options right now are `thresh` to separate the background image from the foreground. And `blur` to reduce noise from the background image.
+
+E.g. `$ python ocr.py --image images/walmart.jpg --preprocess blur`
 
 ## Installation 
 
