@@ -4,6 +4,8 @@ import argparse
 import cv2
 import os
 
+from info import GetInfo
+
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required=True,
 	help="path to input image to be OCR'd")
@@ -32,7 +34,9 @@ cv2.imwrite(filename, gray)
 text = pytesseract.image_to_string(Image.open(filename))
 os.remove(filename)
 
-# print the text the OCR found
-print(text)
+data = GetInfo(text)
+print(data.get_store())
+print(data.get_date())
+print(data.get_total())
 
 exit()

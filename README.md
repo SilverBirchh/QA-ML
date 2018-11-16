@@ -20,12 +20,13 @@ E.g. `$ python ocr.py --image images/walmart.jpg --preprocess blur`
 
 3. Clone the project and `cd` in to it. 
 
-4. Install dependencies
+4. Install dependencies (I don't know how to create a pip file)
 ```
 $ pip install pillow
 $ pip install pytesseract
 $ pip install numpy
 $ pip install opencv-python
+$ pip install nltk
 ```
 
 5. Run the example `python ocr.py --image images/walmart.jpg`
@@ -33,5 +34,5 @@ $ pip install opencv-python
 # Credits
 
 Python OCR tutorial https://www.pyimagesearch.com/2017/07/10/using-tesseract-ocr-python/
-
+Bird, Steven, Edward Loper and Ewan Klein (2009), Natural Language Processing with Python. O’Reilly Media Inc.
 
