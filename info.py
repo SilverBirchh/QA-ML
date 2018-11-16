@@ -1,5 +1,6 @@
 import nltk
 import re
+import dateutil.parser as dparser
 
 class GetInfo(object):
     def __init__(self, text):
@@ -32,12 +33,16 @@ class GetInfo(object):
 
     def get_date(self):
         # Meant to match  dates like: 19.08.15
-        regex = '.*?(?P<date>(\d{2,4}(\.\s?|[^a-zA-Z\d])\d{2}(\.\s?|[^a-zA-Z\d])(20)?1[3-6]))\s+'
+        # regex = '.*?(?P<date>(\d{2,4}(\.\s?|[^a-zA-Z\d])\d{2}(\.\s?|[^a-zA-Z\d])(20)?1[3-6]))\s+'
 
         for line in self.textArray:
-            match = re.match(regex, line)
-            if match:
-                return match.group(1)
+            try:
+                date = dparser.parse(line,fuzzy=True)
+            except Exception: 
+                pass
+        return date
+
+        
 
     def get_total(self):
         totals = []
