@@ -8,7 +8,7 @@ class GetInfo(object):
         nltk.download('averaged_perceptron_tagger')
         nltk.download('maxent_ne_chunker')
         nltk.download('words')
-
+        
         self.text = text
         self.textArray = self.mutate(text)
 

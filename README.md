@@ -26,6 +26,10 @@ E.g. `$ python cli.py --image images/walmart.jpg --preprocess blur`
 $ pip install -r requirements.txt
 ```
 
+To save new installs:
+
+`$ pip freeze > requirements.txt`
+
 The hard way
 ```
 $ pip install pillow
