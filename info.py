@@ -46,9 +46,21 @@ class GetInfo(object):
 
     def get_total(self):
         totals = []
+        total= 0
         for total_line in self.totalWords:
             for line in self.textArray:
                 if total_line in line:
                     totals += [line]
-
-        return totals[-1]
+        if len(totals) > 0:
+            for s in totals[-1].split():
+                try:
+                    total = float(s)
+                    if total.is_integer:
+                        return total
+                except Exception: 
+                    pass
+            value = [float(s) for s in totals if s.isdigit()]
+            return value
+        else:
+            return 0
+        

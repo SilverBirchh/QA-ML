@@ -4,13 +4,13 @@ Python Script to read image files and convert them to text using [Google Tessera
 
 Right now it is a CLI interface. 
 
-# Usage:
+# Usage as CLI:
 
-`$ python ocr.py --image images/walmart.jpg`
+`$ python cli.py --image images/walmart.jpg`
 
 You can use the `--preprocess` to apply some limited preprcessing to the image. This options right now are `thresh` to separate the background image from the foreground. And `blur` to reduce noise from the background image.
 
-E.g. `$ python ocr.py --image images/walmart.jpg --preprocess blur`
+E.g. `$ python cli.py --image images/walmart.jpg --preprocess blur`
 
 ## Installation 
 
@@ -20,7 +20,13 @@ E.g. `$ python ocr.py --image images/walmart.jpg --preprocess blur`
 
 3. Clone the project and `cd` in to it. 
 
-4. Install dependencies (I don't know how to create a pip file)
+4. The easy way:
+
+```
+$ pip install -r requirements.txt
+```
+
+The hard way
 ```
 $ pip install pillow
 $ pip install pytesseract
@@ -29,7 +35,7 @@ $ pip install opencv-python
 $ pip install nltk
 ```
 
-5. Run the example `python ocr.py --image images/walmart.jpg`
+5. Run the example `python cli.py --image images/walmart.jpg`
 
 # Credits
 
