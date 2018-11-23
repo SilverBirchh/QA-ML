@@ -29,7 +29,11 @@ class GetInfo(object):
                     entities += [''.join(c[0] for c in chunk)]
 
         # More often than not the store name is at the top
-        return entities[0]
+        try:
+            return entities[0]
+        except Exception:
+            return ''
+        
 
     def get_date(self):
         # Meant to match  dates like: 19.08.15
@@ -40,7 +44,14 @@ class GetInfo(object):
                 date = dparser.parse(line,fuzzy=True)
             except Exception: 
                 pass
-        return date
+        formatDate = ''
+        formatDate += str(date.day)
+        formatDate += '.'
+        formatDate += str(date.month)
+        formatDate += '.'
+        formatDate += str(date.year)
+
+        return formatDate
 
         
 
