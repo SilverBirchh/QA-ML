@@ -4,16 +4,19 @@ import dateutil.parser as dparser
 
 class GetInfo(object):
     def __init__(self, text):
-        nltk.download('punkt')
-        nltk.download('averaged_perceptron_tagger')
-        nltk.download('maxent_ne_chunker')
-        nltk.download('words')
+        self.download();
         
         self.text = text
         self.textArray = self.mutate(text)
 
         # Add to this array
         self.totalWords = ['total', 'sum', 'balance']
+
+    def download(self):
+        nltk.download('punkt')
+        nltk.download('averaged_perceptron_tagger')
+        nltk.download('maxent_ne_chunker')
+        nltk.download('words')
     
     def mutate(self, text):
         textArray = text.splitlines()
@@ -32,8 +35,7 @@ class GetInfo(object):
         try:
             return entities[0]
         except Exception:
-            return ''
-        
+            return ''  
 
     def get_date(self):
         # Meant to match  dates like: 19.08.15
@@ -52,8 +54,6 @@ class GetInfo(object):
         formatDate += str(date.year)
 
         return formatDate
-
-        
 
     def get_total(self):
         totals = []
